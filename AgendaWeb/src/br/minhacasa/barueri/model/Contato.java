@@ -19,7 +19,6 @@ public class Contato {
 
 	// Métodos
 	public int getId() {
-		System.out.println("tem o id");
 		
 		return id;
 	}
