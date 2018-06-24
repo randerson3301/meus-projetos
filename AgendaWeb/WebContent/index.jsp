@@ -42,7 +42,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">
 					<h1>
-						<img alt="Contatos" src="imagens/contacts.png" height="37px"
+						<img alt="Contatos" src="imgs/contacts.png" height="37px"
 							width="37px">UaiContatos
 					</h1>
 				</div>
@@ -68,7 +68,7 @@
 						<p>
 							<strong> Dt.Nasc: </strong><%=df.format(u.getDtNasc())%>
 						<p>
-							<img alt="Logout" src="imagens/logout.png" height="16px"
+							<img alt="Logout" src="imgs/logout.png" height="16px"
 								width="16px"> <a href="sair.jsp"> Logout </a>
 						</p>
 					</div>
@@ -77,7 +77,7 @@
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<strong style="margin-left: 10px"> <img
-							src="imagens/menu24.png" height="24px" width="24px
+							src="imgs/menuIcon.png" height="24px" width="24px
 						">
 							Menu
 						</strong>
