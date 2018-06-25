@@ -96,11 +96,11 @@
 			<div class="col-md-9">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<strong> Editar Contato </strong>
+						<strong> Excluir Contato </strong>
 					</div>
 					<div class="panel-body">
 						<!-- Formulário -->
-						<form action="ExcluirContato">
+						<form id="formulario">
 							<!-- LINHA 1 -->
 							<fieldset>
 								<legend> Dados Gerais:</legend>
@@ -222,13 +222,26 @@
 						</div>
 				</div>
 				</fieldset>
-
-
-
+				
 				<hr>
 				<div class="form-row">
 					<div class="col-md-12">
-						<input type="submit" value="Excluir" class="btn btn-danger" />
+						<input type="submit" value="Excluir" class="btn btn-danger" 
+						onclick="confirmar()"/>
+						
+						<!-- Código em JS para confirmar a exclusão de um contato -->
+						<script type="text/javascript">
+							function confirmar() {
+								var conf = confirm("Voce deseja excluir o contato?")
+								var formulario = document.getElementById("formulario")
+								if(conf == true) {
+									formulario.action = "ExcluirContato"
+								} else {
+									alert("Não foi excluído!")
+									formulario.action = "index.jsp"
+								}
+							}
+						</script>
 
 						 <a href="login.html" class="btn btn-warning"> Cancelar </a>
 					</div>

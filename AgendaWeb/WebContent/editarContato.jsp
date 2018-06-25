@@ -100,7 +100,7 @@
 					</div>
 					<div class="panel-body">
 						<!-- Formulário -->
-						<form action="EditarContato">
+						<form id="formulario">
 							<!-- LINHA 1 -->
 							<fieldset>
 								<legend> Dados Gerais:</legend>
@@ -228,8 +228,24 @@
 				<hr>
 				<div class="form-row">
 					<div class="col-md-12">
-						<input type="submit" value="Atualizar" class="btn btn-success" />
-
+						<input type="submit" value="Atualizar" class="btn btn-success" 
+						onclick="confirmar()"/>
+						
+						<!-- Código em JS para confirmar a atualização de um contato -->
+						<script type="text/javascript">
+							function confirmar() {
+								var conf = confirm("Voce deseja editar o contato?")
+								var formulario = document.getElementById("formulario")
+								if(conf == true) {
+									formulario.action = "EditarContato"
+								} else {
+									alert("Não foi atualizado!")
+									formulario.action = "index.jsp"
+								}
+							}
+						</script>
+						
+						
 						<input type="reset" value="Limpar" class="btn btn-warning" /> <a
 							href="login.html" class="btn btn-danger"> Cancelar </a>
 					</div>
