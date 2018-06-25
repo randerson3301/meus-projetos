@@ -38,7 +38,7 @@ public class ContatoDAO {
 				cont = new Contato();
 				cont.setId(rs.getInt("id"));
 				cont.setNome(rs.getString("nome"));
-				cont.setDtNasc(rs.getDate("dtNasc"));
+				cont.setDtNasc(rs.getString("dtNasc"));
 				cont.setEmail(rs.getString("email"));
 				cont.setLogradouro(rs.getString("logradouro"));
 				cont.setBairro(rs.getString("bairro"));
@@ -58,5 +58,43 @@ public class ContatoDAO {
 		}
 
 		return contatos;
+	}
+	
+	public boolean gravarContato() {
+		boolean status = true;
+		
+		String sql = "INSERT INTO contatos(nome, dtNasc, email, logradouro, "
+				+ "bairro, cidade, estado, cep, celular, telefone, "
+				+ "sexo, idUsuario)"
+				+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+				try {
+				
+					stm = Conexao.getConnection().prepareStatement(sql);
+					
+					stm.setString(1, cont.getNome());
+					stm.setString(2, cont.getDtNasc());
+					stm.setString(3, cont.getEmail());
+					stm.setString(4, cont.getLogradouro());
+					stm.setString(5, cont.getBairro());
+					stm.setString(6, cont.getCidade());
+					stm.setString(7, cont.getEstado());
+					stm.setString(8, cont.getCep());
+					stm.setString(9, cont.getCelular());
+					stm.setString(10, cont.getTelefone());
+					stm.setString(11, cont.getSexo());
+					stm.setInt(12, cont.getIdUsuario());
+					
+					stm.execute();
+					
+					Conexao.getConnection().close();
+
+				}catch (Exception e) {
+					status = false;
+					
+					e.printStackTrace();
+				}
+		
+		return status;
 	}
 }

@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Contato {
 	private int id;
 	private String nome;
-	private Date dtNasc;
+	private String dtNasc;
 	private String email;
 	private String logradouro;
 	private String bairro;
@@ -35,11 +35,11 @@ public class Contato {
 		this.nome = nome;
 	}
 
-	public Date getDtNasc() {
+	public String getDtNasc() {
 		return dtNasc;
 	}
 
-	public void setDtNasc(Date dtNasc) {
+	public void setDtNasc(String dtNasc) {
 		this.dtNasc = dtNasc;
 	}
 
