@@ -31,7 +31,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Resposta da Servlet</title>
+<title>Meus Contatos</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 
 </head>

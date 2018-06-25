@@ -33,9 +33,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Resposta da Servlet</title>
 <link href="css/bootstrap.css" rel="stylesheet">
-
 </head>
 <body>
+	<script type="text/javascript" src="js/functions.js"></script>
 	<!--  Cabeçalho da página -->
 	<header>
 		<div class="container">
@@ -227,23 +227,9 @@
 				<div class="form-row">
 					<div class="col-md-12">
 						<input type="submit" value="Excluir" class="btn btn-danger" 
-						onclick="confirmar()"/>
+						onclick="confirmarExcluir()"/>
 						
-						<!-- Código em JS para confirmar a exclusão de um contato -->
-						<script type="text/javascript">
-							function confirmar() {
-								var conf = confirm("Voce deseja excluir o contato?")
-								var formulario = document.getElementById("formulario")
-								if(conf == true) {
-									formulario.action = "ExcluirContato"
-								} else {
-									alert("Não foi excluído!")
-									formulario.action = "index.jsp"
-								}
-							}
-						</script>
-
-						 <a href="login.html" class="btn btn-warning"> Cancelar </a>
+						<a href="login.html" class="btn btn-warning"> Cancelar </a>
 					</div>
 
 

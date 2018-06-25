@@ -33,9 +33,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Resposta da Servlet</title>
 <link href="css/bootstrap.css" rel="stylesheet">
-
 </head>
 <body>
+	<script src="js/functions.js"></script>
 	<!--  Cabeçalho da página -->
 	<header>
 		<div class="container">
@@ -217,35 +217,15 @@
 									name="txtCep" class="form-control" value = "<%= cont.getCep()%>">
 							</div>
 
-
-
 						</div>
 				</div>
 				</fieldset>
-
-
-
+				
 				<hr>
 				<div class="form-row">
 					<div class="col-md-12">
 						<input type="submit" value="Atualizar" class="btn btn-success" 
-						onclick="confirmar()"/>
-						
-						<!-- Código em JS para confirmar a atualização de um contato -->
-						<script type="text/javascript">
-							function confirmar() {
-								var conf = confirm("Voce deseja editar o contato?")
-								var formulario = document.getElementById("formulario")
-								if(conf == true) {
-									formulario.action = "EditarContato"
-								} else {
-									alert("Não foi atualizado!")
-									formulario.action = "index.jsp"
-								}
-							}
-						</script>
-						
-						
+						onclick="confirmarEditar()"/>
 						<input type="reset" value="Limpar" class="btn btn-warning" /> <a
 							href="login.html" class="btn btn-danger"> Cancelar </a>
 					</div>
