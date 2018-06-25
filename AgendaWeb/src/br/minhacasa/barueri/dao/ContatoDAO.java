@@ -176,4 +176,28 @@ public class ContatoDAO {
 	
 		return status;
 	}
+
+	public boolean excluirContato() {
+		boolean status = true;
+	
+		String sql = "DELETE FROM contatos WHERE id = ?";
+	
+		try {
+	
+			stm = Conexao.getConnection().prepareStatement(sql);
+	
+			stm.setInt(1, cont.getId());
+	
+			stm.execute();
+	
+			Conexao.getConnection().close();
+	
+		} catch (Exception e) {
+			status = false;
+	
+			e.printStackTrace();
+		}
+	
+		return status;
+	}
 }
