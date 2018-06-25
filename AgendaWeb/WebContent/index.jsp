@@ -23,7 +23,7 @@
 	if (u == null) {
 		response.sendRedirect("login.html");
 
-	} else { 
+	} else {
 		ContatoDAO dao = new ContatoDAO();
 		listContatos = dao.getContatos(u.getId());
 %>
@@ -85,7 +85,8 @@
 					<div class="panel-body">
 						<ul class="nav">
 							<li class="nav-item"><a href="index.jsp">Home</a></li>
-							<li class="nav-item"><a href="cadastrarContato.jsp">Novo Contato</a></li>
+							<li class="nav-item"><a href="cadastrarContato.jsp">Novo
+									Contato</a></li>
 
 						</ul>
 					</div>
@@ -116,18 +117,17 @@
 								<td><%=contato.getId()%></td>
 								<td><%=contato.getNome()%></td>
 								<td><%=contato.getEmail()%></td>
-								
-								
+
+
 								<!-- Botões -->
 
-								<td>
-									<img alt="Edit User" src="imgs/edit-user.png" height="24px"
+								<td><a href="editarContato.jsp?id=<%=contato.getId()%>">
+										<img alt="Edit User" src="imgs/edit-user.png" height="24px"
 										width="24px">
-								</td>
-								<td>
-									<img alt="Delete User" src="imgs/del-user.png"
-									height="24px" width="24px">
-								</td>
+								</a></td>
+								<td><a href="excluirContato.jsp?id=<%=contato.getId()%>">
+								<img alt="Delete User" src="imgs/del-user.png"
+									height="24px" width="24px"></a></td>
 							</tr>
 							<%
 								}
