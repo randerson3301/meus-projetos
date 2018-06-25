@@ -137,4 +137,43 @@ public class ContatoDAO {
 
 		return status;
 	}
+
+	public boolean editarContato() {
+		boolean status = true;
+	
+		String sql = "UPDATE contatos SET nome = ?, dtNasc = ?, email = ?, logradouro = ?, "
+				+ "bairro = ?, cidade = ?, estado = ?, cep = ?, celular = ?, telefone = ?, "
+				+ "sexo = ?, idUsuario = ? "
+				+ "WHERE id = ?";
+	
+		try {
+	
+			stm = Conexao.getConnection().prepareStatement(sql);
+	
+			stm.setString(1, cont.getNome());
+			stm.setString(2, cont.getDtNasc());
+			stm.setString(3, cont.getEmail());
+			stm.setString(4, cont.getLogradouro());
+			stm.setString(5, cont.getBairro());
+			stm.setString(6, cont.getCidade());
+			stm.setString(7, cont.getEstado());
+			stm.setString(8, cont.getCep());
+			stm.setString(9, cont.getCelular());
+			stm.setString(10, cont.getTelefone());
+			stm.setString(11, cont.getSexo());
+			stm.setInt(12, cont.getIdUsuario());
+			stm.setInt(13, cont.getId());
+	
+			stm.execute();
+	
+			Conexao.getConnection().close();
+	
+		} catch (Exception e) {
+			status = false;
+	
+			e.printStackTrace();
+		}
+	
+		return status;
+	}
 }

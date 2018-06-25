@@ -96,7 +96,7 @@
 			<div class="col-md-9">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<strong> Cadastrar Contato </strong>
+						<strong> Editar Contato </strong>
 					</div>
 					<div class="panel-body">
 						<!-- Formulário -->
@@ -110,6 +110,8 @@
 									<div class="form-group col-md-6">
 										<input type="hidden" name="txtIdUsuario"
 											value="<%=u.getId()%>"> 
+										<input type="hidden" name="txtId"
+											value="<%=cont.getId()%>"> 
 											<label for="txtNome">Nome: </label> 
 											<input type="text" name="txtNome" 
 											class="form-control" value = "<%= cont.getNome()%>">
@@ -226,7 +228,7 @@
 				<hr>
 				<div class="form-row">
 					<div class="col-md-12">
-						<input type="submit" value="Cadastrar" class="btn btn-success" />
+						<input type="submit" value="Atualizar" class="btn btn-success" />
 
 						<input type="reset" value="Limpar" class="btn btn-warning" /> <a
 							href="login.html" class="btn btn-danger"> Cancelar </a>
