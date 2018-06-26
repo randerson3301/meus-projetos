@@ -66,7 +66,7 @@
 						<p>
 							<strong> Cidade: </strong><%=u.getCidade()%>
 						<p>
-							<strong> Dt.Nasc: </strong><%=df.format(u.getDtNasc())%>
+							<strong> Dt.Nasc: </strong><%=u.getDtNasc() != null? df.format(u.getDtNasc()):"Não Informado"%>
 						<p>
 							<img alt="Logout" src="imgs/logout.png" height="16px"
 								width="16px"> <a href="sair.jsp"> Logout </a>

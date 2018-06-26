@@ -1,5 +1,6 @@
 package br.minhacasa.barueri.dao;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -58,5 +59,33 @@ public class UsuarioDAO {
 		}
 
 		return user;
+	}
+	
+	public boolean gravar() {
+		boolean status = true;
+		
+		stm = null;
+		
+		String sql = "INSERT INTO usuarios(nome, email, cidade, senha)"
+				+ " VALUES(?, ?, ?, ?)";
+		try {
+			stm = Conexao.getConnection().prepareStatement(sql);
+			
+			stm.setString(1, user.getNome());
+			stm.setString(2, user.getEmail());
+			stm.setString(3, user.getCidade());
+			stm.setString(4, user.getSenha());
+			
+			
+			stm.execute();
+			
+			stm.close();
+			
+		} catch (Exception e) {
+			status = false;
+			e.printStackTrace();
+		}
+		
+		return status;
 	}
 }
