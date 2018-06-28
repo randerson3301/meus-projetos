@@ -5,7 +5,7 @@
 <%@page import="br.minhacasa.barueri.model.Contato"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
 
 <%@page import="br.minhacasa.barueri.model.Usuario"%>
@@ -30,12 +30,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Meus Contatos</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 
 </head>
 <body>
+	<script type="text/javascript" src="js/functions.js"></script>
 	<!--  Cabeçalho da página -->
 	<header>
 		<div class="container">
@@ -69,7 +70,7 @@
 							<strong> Dt.Nasc: </strong><%=u.getDtNasc() != null? df.format(u.getDtNasc()):"Não Informado"%>
 						<p>
 							<img alt="Logout" src="imgs/logout.png" height="16px"
-								width="16px"> <a href="sair.jsp"> Logout </a>
+								width="16px"> <a onclick="logout()" id="logout"> Logout </a>
 						</p>
 					</div>
 				</div>

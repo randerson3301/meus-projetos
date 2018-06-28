@@ -66,8 +66,8 @@ public class UsuarioDAO {
 		
 		stm = null;
 		
-		String sql = "INSERT INTO usuarios(nome, email, cidade, senha)"
-				+ " VALUES(?, ?, ?, ?)";
+		String sql = "INSERT INTO usuarios(nome, email, cidade, senha, dtNasc)"
+				+ " VALUES(?, ?, ?, ?, ?)";
 		try {
 			stm = Conexao.getConnection().prepareStatement(sql);
 			
@@ -76,6 +76,11 @@ public class UsuarioDAO {
 			stm.setString(3, user.getCidade());
 			stm.setString(4, user.getSenha());
 			
+			if(user.getDtNasc() != null) {
+				stm.setDate(5, user.getDtNasc());
+			} else {
+				stm.setDate(5, null);
+			}
 			
 			stm.execute();
 			

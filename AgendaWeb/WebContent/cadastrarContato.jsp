@@ -5,7 +5,7 @@
 <%@page import="br.minhacasa.barueri.model.Contato"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
 
 <%@page import="br.minhacasa.barueri.model.Usuario"%>
@@ -36,6 +36,7 @@
 
 </head>
 <body>
+	<script type="text/javascript" src="js/functions.js"></script>
 	<!--  Cabeçalho da página -->
 	<header>
 		<div class="container">
@@ -66,10 +67,11 @@
 						<p>
 							<strong> Cidade: </strong><%=u.getCidade()%>
 						<p>
-							<strong> Dt.Nasc: </strong><%=u.getDtNasc() != null? df.format(u.getDtNasc()):"Não Informado"%>
+							<strong> Dt.Nasc: </strong><%=u.getDtNasc() != null ? df.format(u.getDtNasc()) : "Não Informado"%>
 						<p>
 							<img alt="Logout" src="imgs/logout.png" height="16px"
-								width="16px"> <a href="sair.jsp"> Logout </a>
+								width="16px"> <a onclick="logout()" id="logout">
+								Logout </a>
 						</p>
 					</div>
 				</div>
@@ -226,8 +228,7 @@
 					<div class="col-md-12">
 						<input type="submit" value="Cadastrar" class="btn btn-success" />
 
-						<input type="reset" value="Limpar" class="btn btn-warning" /> <a
-							href="login.html" class="btn btn-danger"> Cancelar </a>
+						<a href="index.jsp" class="btn btn-danger"> Cancelar </a>
 					</div>
 
 

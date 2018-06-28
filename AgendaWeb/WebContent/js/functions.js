@@ -1,6 +1,3 @@
-
-
-
 //Código em JS para confirmar a exclusão de um contato
 function confirmarExcluir() {
 	var conf = confirm("Voce deseja excluir o contato?")
@@ -22,5 +19,18 @@ function confirmarEditar() {
 	} else {
 		alert("Não foi atualizado!")
 		formulario.action = "index.jsp"
+	}
+}
+
+//função para logout do usuário
+function logout() {
+	var conf = confirm("Você deseja encerrar a sessão?");
+	var link = document
+			.getElementById("logout")
+
+	if (conf) {
+		link.href = "login.html"
+	} else {
+	    link.href = "#"
 	}
 }
