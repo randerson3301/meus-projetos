@@ -112,12 +112,12 @@
 									<div class="form-group col-md-6">
 										<input type="hidden" name="txtIdUsuario"
 											value="<%=u.getId()%>"> <label for="txtNome">
-											Nome: </label> <input type="text" name="txtNome" class="form-control">
+											Nome: </label> <input type="text" name="txtNome" class="form-control" required="required">
 									</div>
 
 									<div class="form-group col-md-3">
 										<label for="txtDtNasc"> Dt Nasc: </label> <input type="date"
-											name="txtDtNasc" class="form-control">
+											name="txtDtNasc" class="form-control" required="required">
 									</div>
 
 									<div class="form-group col-md-3">
@@ -139,7 +139,7 @@
 									<!-- Primeira Parte -->
 									<div class="form-group col-md-6">
 										<label for="txtEmail"> E-mail: </label> <input type="text"
-											name="txtEmail" class="form-control">
+											name="txtEmail" class="form-control" required="required">
 									</div>
 
 									<div class="form-group col-md-3">

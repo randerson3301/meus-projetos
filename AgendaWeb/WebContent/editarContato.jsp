@@ -114,7 +114,7 @@
 											name="txtId" value="<%=cont.getId()%>"> <label
 											for="txtNome">Nome: </label> <input type="text"
 											name="txtNome" class="form-control"
-											value="<%=cont.getNome()%>">
+											value="<%=cont.getNome()%>" required="required">
 									</div>
 
 									<div class="form-group col-md-3">
@@ -146,7 +146,7 @@
 									<div class="form-group col-md-6">
 										<label for="txtEmail"> E-mail: </label> <input type="text"
 											name="txtEmail" class="form-control"
-											value="<%=cont.getEmail()%>">
+											value="<%=cont.getEmail()%>" required="required">
 									</div>
 
 									<div class="form-group col-md-3">
